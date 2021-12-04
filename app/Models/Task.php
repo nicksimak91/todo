@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Status;
 
 class Task extends Model
 {
@@ -26,21 +27,15 @@ class Task extends Model
         return route('tasks.edit', $this->id);
     }
 
-    public function getStatus($status)
+    public function getStatus($value)
     {
-        echo match( $status ) {
-            '1' => "Ожидает",
-            '2' => "Выполнена",
-            '3' => "Просрочена",
-            };
+        $status = new Status();
+        return $status->statusTask($value);
     }
 
     static public function getStatusColor($status)
     {
-        echo match( $status ) {
-            '1' => "white",
-            '2' => "#20B2AA",
-            '3' => "#CD5C5C",
-            };
+        $color = new Status();
+        return $color->colorTask($status);
     }
 }

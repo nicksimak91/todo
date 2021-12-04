@@ -29,17 +29,11 @@ class TasksController extends Controller
     {
         $task = new Task;
 
-        if($task->create($request->all())){
+        if ($task->create($request->all())) {
             return redirect()
                 ->back()
                 ->with('success', 'Задача добавлена');
         }
-
-    }
-
-    public function show($id)
-    {
-        //
     }
 
     public function edit($id)
@@ -51,30 +45,29 @@ class TasksController extends Controller
         ]);
     }
 
-
     public function update(Request $request, $id)
     {
         $isSuccess = Task::find($id)->update(
             $request->all(),
         );
 
-        if($isSuccess){
+        if ($isSuccess) {
             return redirect()
                 ->back()
                 ->with('success', 'Задача обновлена');
         }
     }
 
-
     public function destroy($id)
     {
         $task = Task::find($id);
 
-        if($task->delete($id)){
+        if ($task->delete($id)) {
             return redirect()
                 ->back()
                 ->with('success', sprintf(
-                    'Задача %s успешно удалена', $task->id 
+                    'Задача %s успешно удалена',
+                    $task->id
                 ));
         }
     }

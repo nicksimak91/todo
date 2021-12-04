@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('content')
-    <div class="container my-4">
+<div class="container my-4">
     <h3 class="text-center">{{$subHeading}}</h3>
     <div class="row d-flex justify-content-center">
         <div class="col-md-4">
@@ -31,6 +31,7 @@
                     </div>
                     @csrf
                     <button type="submit" class="btn btn-primary">Добавить</button>
+                    <a href="/tasks" class="btn btn-primary">Вернуться на главную</a>
                 </form>
             </div>
         </div>
