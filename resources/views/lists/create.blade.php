@@ -18,9 +18,9 @@
                         <div id="codeHelp" class="form-text">Опишите задачу</div>
                     </div>
                     <div class="mb-3">
-                        <label for="code" class="form-label">Срок выполнение</label>
-                        <input type="text" class="form-control" id="code" aria-describedby="complete_toHelp" name="complete_to">
-                        <div id="codeHelp" class="form-text">Укажите срок выполнения задачи, в формате Y-M-D</div>
+                        <label for="date" class="form-label">Срок выполнение</label>
+                        <input type="date" class="form-control" id="date" aria-describedby="complete_toHelp" name="complete_to" min="2020-01-01" max="2025-12-31">
+                        <div id="codeHelp" class="form-text">Укажите срок выполнения задачи</div>
                     </div>
                     <div class="mb-3">
                         <select name="status" class="form-select" aria-label="Default select example">
